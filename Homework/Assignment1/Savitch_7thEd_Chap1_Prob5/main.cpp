@@ -1,7 +1,7 @@
 /* 
  * Author: David Macias
- * Purpose: Big C
- * Created on January 4, 2016, 11:40 AM
+ * Purpose: Calculating sum and Product of two integers.
+ * Created on January 6, 2016, 11:30 AM
  */
 //System Libraries
 #include <iostream>
@@ -18,20 +18,26 @@ using namespace std;
 int main(int argc, char** argv) {
     
     //Declare and Initialize variables
-    char lttr = 'X';
+    int fstInt, secInt, sum, prod;
     
     //Input data
+    cout<<"Hello. This is a Program for Calculating the Sum and Product of Two Integers."<<endl;
+    cout<<"Press Enter after every response."<<endl;
+    cout<<""<<endl;
+    cout<<"Please Enter the first Integer: ";
+    cin>>fstInt;
+    cout<<""<<endl;
+    cout<<"Now Enter the Second Integer: ";
+    cin>>secInt;
     
     //Calculate or map inputs to outputs
+    sum = fstInt+secInt;
+    prod = fstInt*secInt;
     
     //Output results
-    cout<<"  "<<lttr<<lttr<<lttr<<endl;
-    cout<<" "<<lttr<<"   "<<lttr<<endl;
-    cout<<lttr<<endl;
-    cout<<lttr<<endl;
-    cout<<lttr<<endl;
-    cout<<" "<<lttr<<"   "<<lttr<<endl;
-    cout<<"  "<<lttr<<lttr<<lttr<<endl;
+    cout<<""<<endl;
+    cout<<"The Sum of "<<fstInt<<" and "<<secInt<<" is equal to "<<sum<<"."<<endl;
+    cout<<"The Product of "<<fstInt<<" and "<<secInt<<" is equal to "<<prod<<"."<<endl;
     
     //Exit stage right
     

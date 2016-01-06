@@ -18,20 +18,24 @@ using namespace std;
 int main(int argc, char** argv) {
     
     //Declare and Initialize variables
-    char lttr = 'X';
+    int tim, dist, calcTim, aclTim;
     
     //Input data
     
     //Calculate or map inputs to outputs
     
     //Output results
-    cout<<"  "<<lttr<<lttr<<lttr<<endl;
-    cout<<" "<<lttr<<"   "<<lttr<<endl;
-    cout<<lttr<<endl;
-    cout<<lttr<<endl;
-    cout<<lttr<<endl;
-    cout<<" "<<lttr<<"   "<<lttr<<endl;
-    cout<<"  "<<lttr<<lttr<<lttr<<endl;
+    cout<<"Hello. This is a Program for Calculating the distance of a freefalling object."<<endl;
+    cout<<"Press Enter after every response."<<endl;
+    cout<<""<<endl;
+    cout<<"Enter the time in Seconds that it took the object to fall. ";
+    cin>>tim;
+    cout<<""<<endl;
+   
+    dist = 32*tim^2/2;
+    
+    cout<<""<<endl;
+    cout<<"The distance at which the object fell is "<<dist<<" feet."<<endl;
     
     //Exit stage right
     

@@ -1,7 +1,7 @@
 /* 
  * Author: David Macias
- * Purpose: Big C
- * Created on January 4, 2016, 11:40 AM
+ * Purpose: Total peas in number of pods
+ * Created on January 6, 2016, 11:30 AM
  */
 //System Libraries
 #include <iostream>
@@ -18,20 +18,28 @@ using namespace std;
 int main(int argc, char** argv) {
     
     //Declare and Initialize variables
-    char lttr = 'X';
+    int numpods, ppod, totpeas;
     
     //Input data
+    cout<<"Press return after entering a number."<<endl;
+    cout<<"Enter the number of pods:"<<endl;
+    cin>>numpods;
+    cout<<"Enter the number of peas in a pod:"<<endl;
+    cin>>ppod;
     
     //Calculate or map inputs to outputs
+    totpeas = numpods*ppod;
     
     //Output results
-    cout<<"  "<<lttr<<lttr<<lttr<<endl;
-    cout<<" "<<lttr<<"   "<<lttr<<endl;
-    cout<<lttr<<endl;
-    cout<<lttr<<endl;
-    cout<<lttr<<endl;
-    cout<<" "<<lttr<<"   "<<lttr<<endl;
-    cout<<"  "<<lttr<<lttr<<lttr<<endl;
+    cout<<"If you have ";
+    cout<<numpods;
+    cout<<" pea pods ";
+    cout<<"and ";
+    cout<<ppod;
+    cout<<" peas in each pod, then ";
+    cout<<"you have ";
+    cout<<totpeas;
+    cout<<" peas in all the pods."<<endl;
     
     //Exit stage right
     
