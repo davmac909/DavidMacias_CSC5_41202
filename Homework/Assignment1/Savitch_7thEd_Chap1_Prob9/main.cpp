@@ -5,6 +5,7 @@
  */
 //System Libraries
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 //User Libraries
@@ -18,7 +19,8 @@ using namespace std;
 int main(int argc, char** argv) {
     
     //Declare and Initialize variables
-    int tim, dist, calcTim, aclTim;
+    int tim, calcTim, aclTim;
+    float dist, grv = 32.174f;
     
     //Input data
     
@@ -28,14 +30,14 @@ int main(int argc, char** argv) {
     cout<<"Hello. This is a Program for Calculating the distance of a freefalling object."<<endl;
     cout<<"Press Enter after every response."<<endl;
     cout<<""<<endl;
-    cout<<"Enter the time in Seconds that it took the object to fall. ";
+    cout<<"Enter the time in Seconds that it took the object took to fall. ";
     cin>>tim;
     cout<<""<<endl;
    
-    dist = 32*tim^2/2;
+    dist = 0.5f*grv*(tim*tim);
     
     cout<<""<<endl;
-    cout<<"The distance at which the object fell is "<<dist<<" feet."<<endl;
+    cout<<"The distance at which the object fell is "<<fixed<<setprecision(3)<<showpoint<<dist<<" feet."<<endl;
     
     //Exit stage right
     
