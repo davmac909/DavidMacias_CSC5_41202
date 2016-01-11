@@ -1,7 +1,7 @@
 /* 
  * Author: David Macias
- * Purpose: Distance of Falling Object
- * Created on January 7, 2016, 11:40 AM
+ * Purpose: Velocity of Sound
+ * Created on January 11, 2016, 7:43 AM
  */
 //System Libraries
 #include <iostream>
@@ -19,24 +19,33 @@ using namespace std;
 int main(int argc, char** argv) {
     
     //Declare and Initialize variables
-    int tim, calcTim, aclTim;
-    float dist, grv = 32.174f;
+    int tStrt, tStop;
+    float temp, vel; 
     
     //Input data
     cout<<"Hello. This is a Program for Calculating the distance of a freefalling object."<<endl;
     cout<<"Press Enter after every response."<<endl;
-    cout<<""<<endl;
-    cout<<"Enter the time in Seconds that it took the object took to fall. ";
-    cin>>tim;
-    cout<<""<<endl;
+    cout<<endl;
+    cout<<"Enter the Starting Temperature. ";
+    cin>>tStrt;
+    cout<<endl;
+    cout<<"Enter the Ending Temperature. ";
+    cin>>tStop;
+    cout<<endl;
     
     //Calculate or map inputs to outputs
-    dist = 0.5f*grv*(tim*tim);
+    temp = tStrt++;
     
-    //Output results 
-    cout<<""<<endl;
-    cout<<"The distance at which the object fell is "<<fixed<<setprecision(3)<<showpoint<<dist<<" feet."<<endl;
     
+    //Output results  
+    do {
+        
+        vel = 331.3f+0.61*temp;
+        cout<<"At "<<temp<<" degrees Celsius the Velocity of Sound is "<<vel<<" m/s."<<endl; 
+    }
+    while(temp == tStop);
+    
+        
     //Exit stage right
     
     return 0;
