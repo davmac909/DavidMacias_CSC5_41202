@@ -1,7 +1,7 @@
 /* 
  * Author: David Macias
- * Purpose: Big C
- * Created on January 4, 2016, 11:40 AM
+ * Purpose: Distance of Falling Object
+ * Created on January 7, 2016, 11:40 AM
  */
 //System Libraries
 #include <iostream>
@@ -23,19 +23,17 @@ int main(int argc, char** argv) {
     float dist, grv = 32.174f;
     
     //Input data
-    
-    //Calculate or map inputs to outputs
-    
-    //Output results
     cout<<"Hello. This is a Program for Calculating the distance of a freefalling object."<<endl;
     cout<<"Press Enter after every response."<<endl;
     cout<<""<<endl;
     cout<<"Enter the time in Seconds that it took the object took to fall. ";
     cin>>tim;
     cout<<""<<endl;
-   
+    
+    //Calculate or map inputs to outputs
     dist = 0.5f*grv*(tim*tim);
     
+    //Output results 
     cout<<""<<endl;
     cout<<"The distance at which the object fell is "<<fixed<<setprecision(3)<<showpoint<<dist<<" feet."<<endl;
     
