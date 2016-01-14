@@ -19,14 +19,15 @@ int main(int argc, char** argv) {
     //Declare and Initialize variables
     unsigned int rmCap, pplAtnd; //Max capacity of the room and people attending the meeting
     int legal;                   //Difference between capacity an attendees
-    char again;                  //Question for user to repeat program
+    char again = 'y';                  //Question for user to repeat program
 
     //Input data
     cout <<"This is a program to determine if a meeting is legal to hold " <<endl;
     cout <<"depending on room capacity and attendees." <<endl;
     cout <<"Press enter after every response" <<endl;
     cout <<endl;
-    do {
+    
+    while ((again == 'y')||(again == 'Y')){
 	cout <<"What is the room capacity? " <<endl;
 	cin >> rmCap; //input for room capacity
 	cout <<endl;
@@ -53,7 +54,6 @@ int main(int argc, char** argv) {
         cout <<"Do again? (y/n)" <<endl;
         cin >> again;
     }
-    while ((again == 'y')||(again == 'Y'));
     
     cout <<"Good-Bye" <<endl;
     

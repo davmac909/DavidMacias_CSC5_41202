@@ -18,14 +18,15 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare and Initialize variables
     float amtNeed, inRate, mntDur, facVal, mntPay;
-    char again;
+    char again = 'y';
 
     //Input data
     cout <<"This is a program to calculate the face value of a loan depending on" <<endl;
     cout <<"amount needed, interest rate, and duration of the loan." <<endl;
     cout <<"Press enter after every response" <<endl;
     cout <<endl;
-    do {
+    
+    while ((again == 'y')||(again == 'Y')) {
 	cout <<"What is the amount needed in dollars? " <<endl;
 	cin >> amtNeed;
 	cout <<endl;
@@ -53,7 +54,7 @@ int main(int argc, char** argv) {
         cout <<"Calculate again? (y/n)" <<endl;
         cin >> again;
     }
-    while ((again == 'y')||(again == 'Y'));
+    
     
     cout <<"Good-Bye" <<endl;
     

@@ -18,9 +18,11 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare and Initialize variables
-    float n;                     //input value to obtain its square root
-    float r, guess, done;               //Intermediate values that approach square root
-
+    float n;                       //input value to obtain its square root
+    float r, guess;                //Intermediate values that approach square root
+    float tol = 0.001f;            //Accuracy of the results / tolerance
+    int num;                       //Calculation counter
+    
     //Input data
     cout <<"This is a program to determine if a meeting is legal to hold " <<endl;
     cout <<"depending on room capacity and attendees." <<endl;
@@ -29,31 +31,31 @@ int main(int argc, char** argv) {
     cout <<"Input the value to computer the square root of " <<endl;
     cin >> n; 
     cout <<endl;
-    
-    guess = n/2; 
-    r = n/guess;
-    guess = (guess+r)/2;
-    
     cout <<"Input value:      " <<n <<endl;
     cout <<"Square Root(" <<n <<"):  " <<sqrt(n) <<endl;
     cout <<endl;
     
+    num = 1;
+    guess = n/2; 
+    
     do {
-        //Approximate the square root first pass
+        //Approximate the square root
         r = n/guess;
         guess = (guess+r)/2;
         
         //Output results
+        cout <<num;
+        cout <<"      First step:     " <<r <<endl;
+        cout <<"       Second step:    " <<guess <<endl;
+        cout <<"-------------------------------" <<endl;
+        num++;
         
-        cout <<"First pass r:     " <<r <<endl;
-        cout <<"First pass guess: " <<guess <<endl;
-        
-        done = r-guess;
         //Exit stage right
     }
-    while (done < 0);
+    while (abs((r - guess)/guess)*100>tol);
     
-    cout <<"Good-Bye" <<endl;
+    cout <<endl;
+    cout <<"End result is: " <<guess <<endl;
     
     return 0;
 }
