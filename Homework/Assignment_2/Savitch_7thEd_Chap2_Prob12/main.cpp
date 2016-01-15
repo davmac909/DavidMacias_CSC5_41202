@@ -1,7 +1,6 @@
 /* 
- * File:   main.cpp
  * Author: David Macias
- * Purpose: Check out IDE
+ * Purpose: Babylonian Algorithm for Computing Square Root
  * Created on January 4, 2016, 10:18 AM
  */
 //System Libraries
@@ -24,8 +23,8 @@ int main(int argc, char** argv) {
     int num;                       //Calculation counter
     
     //Input data
-    cout <<"This is a program to determine if a meeting is legal to hold " <<endl;
-    cout <<"depending on room capacity and attendees." <<endl;
+    cout <<"This is a program for Computing the Square Root of a number " <<endl;
+    cout <<"using the Babylonian Algorithm." <<endl;
     cout <<"Press enter after every response" <<endl;
     cout <<endl;
     cout <<"Input the value to computer the square root of " <<endl;
@@ -51,9 +50,8 @@ int main(int argc, char** argv) {
         num++;
         
         //Exit stage right
-    }
-    while (abs((r - guess)/guess)*100>tol);
-    
+    }while (abs((r - guess)/guess)*100>tol);
+
     cout <<endl;
     cout <<"End result is: " <<guess <<endl;
     
