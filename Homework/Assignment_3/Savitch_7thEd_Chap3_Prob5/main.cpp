@@ -14,14 +14,15 @@
     	float totCost;
         
      
-    	bool week = (fstLttr == 'M'||fstLttr == 'm'&& secLttr == 'O'||secLttr == 'o'||
-    	fstLttr == 'T'||fstLttr == 't'&& secLttr == 'U'||secLttr == 'u'||
-    	fstLttr == 'W'||fstLttr == 'w'&& secLttr == 'E'||secLttr == 'e'||
-    	fstLttr == 'T'||fstLttr == 't'&& secLttr == 'H'||secLttr == 'h'||
-    	fstLttr == 'F'||fstLttr == 'f'&& secLttr == 'R'||secLttr == 'r');
+    	bool mon = (fstLttr == 'M'||fstLttr == 'm'&& secLttr == 'O'||secLttr == 'o');
+    	bool tue = (fstLttr == 'T'||fstLttr == 't'&& secLttr == 'U'||secLttr == 'u');
+    	bool web = (fstLttr == 'W'||fstLttr == 'w'&& secLttr == 'E'||secLttr == 'e');
+    	bool thu = (fstLttr == 'T'||fstLttr == 't'&& secLttr == 'H'||secLttr == 'h');
+    	bool fri = (fstLttr == 'F'||fstLttr == 'f'&& secLttr == 'R'||secLttr == 'r');
+    	bool sat = (fstLttr == 'S'||fstLttr == 's'&& secLttr == 'A'||secLttr == 'a');
+    	bool sun = (fstLttr == 'S'||fstLttr == 's'&& secLttr == 'U'||secLttr == 'u');
         
-    	bool weekend = (fstLttr == 'S'||fstLttr == 's'&& secLttr == 'A'||secLttr == 'a'||
-    	fstLttr == 'S'||fstLttr == 's'&& secLttr == 'U'||secLttr == 'u');
+        bool week = mon
         
         do {
     	cout <<"what day of the week did you make the call? "

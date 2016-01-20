@@ -18,22 +18,21 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     cout <<"Solution to Savitch 7thEd Chap3 Prob12: ";
-    cout <<"Approximated e^x" <<endl;
+    cout <<"Approximating PI" <<endl;
 
     //Declare and initialize variables
-    float tol = 1e-6f, term = 1, etox = 1, x;       //e^x
-    unsigned int nTerm = 1;                         //counter to determine how many terms
+    int terms;
+    char sign = -1;
+    
     
     //input value of x
     cout <<"Enter  of e^x computation." <<endl;
     cin >>x;
     
     //Calculate e^x
-    do{
-        term *= x/nTerm++;
-        etox += term;
+    for(int i = 2, j = 3; terms<=i; i++, j+=2){
         
-    }while(term>tol);
+    }
     
     //output results
     cout <<"The exact value of e^" <<x <<" = " <<exp(x) <<endl;
