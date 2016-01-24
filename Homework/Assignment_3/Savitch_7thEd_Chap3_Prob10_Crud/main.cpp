@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     unsigned int nDays;         //Number of days
     float crdWght;              //Initial Crud Weight
     char again;                 //Response to run the program again
-        
+
     do {
         //Initialize the sequence
         fim2 = fim1 = 1;            //Start the Sequence
