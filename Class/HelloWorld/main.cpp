@@ -12,20 +12,32 @@ using namespace std;
 
 //Global Constants
 
+
 //Function Prototypes
+
 
 //Execution Begins Here
 int main(int argc, char** argv) {
-    //Declare and Initialize variables
-
-    //Input data
+    //Introduce program
+    cout <<"Hello. This program computes the miles per gallon outputted by a vehicle" <<endl;
+    cout <<"when liters consumed and miles driven by the vehicle are inputted." <<endl <<endl;
     
-    //Calculate or map inputs to outputs
+    //Declare and Initialize variables
+    char rpt;
 
-    //Output results
+    do {
+        //Input data
 
-    //Exit stage right
+        //Calculate or map inputs to outputs
+
+        //Output results
+
+        //Exit stage right
+        cout <<"Enter anything to repeat or '0' to stop" <<endl;
+        cin >>rpt;
+    }while(rpt != '0');
 
     return 0;
 }
 
+//Function Definition

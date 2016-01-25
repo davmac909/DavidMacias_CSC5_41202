@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
     unsigned short wnCrSw = 0;          //Counter for number of times car was won by switching doors
     unsigned short showCns;             //Consolation Door shown before being asked to change doors if desired
     unsigned short cntSwts = 0;         //Counter for the door changes made
-    unsigned short runs = 10000;         //Number of simulations program loops through before outputting percentages
+    unsigned short runs = 1000;         //Number of simulations program loops through before outputting percentages
     unsigned short choice;              //The door that is chosen
     unsigned short carDoor;             //The door that the car is behind
     unsigned short newPick;             //New door chosen after one consolation prize is shown and the decision to switch is made
