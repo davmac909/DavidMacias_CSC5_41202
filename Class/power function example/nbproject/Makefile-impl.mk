@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=basic template
+PROJECTNAME=power function example
 
 # Active Configuration
 DEFAULTCONF=Debug
