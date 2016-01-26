@@ -17,15 +17,28 @@ using namespace std;
 
 //Execution Begins Here
 int main(int argc, char** argv) {
-    int matrix [2][2] = {
-        {5,1},
-        {1,0}
-    };
-    cout <<matrix[0][0] <<endl;
-    for(int i = 0; i < 2; ++i) {
-        for(int j = 0; j < 2; ++j) {
-            cout << i << j << matrix[i][j]<<endl;
+    unsigned short rows;
+    unsigned short clmns;
+    
+    cout <<"how many rows?" <<endl;
+    cin >>rows;
+    cout <<"how many columns?" <<endl;
+    cin >>clmns;
+    
+    char matrix [rows][clmns];
+    
+    for(int i = 0; i <= rows; i++) {
+        for(int j = 0; j <= clmns; j++) {
+            matrix[i][j] = 'X';
         }
+    }
+    
+    for(int i = 0; i < rows; ++i) {
+        for(int j = 0; j < clmns; ++j) {
+            cout <<matrix[i][j];
+            
+        }
+        cout <<endl;
     }
 
     return 0;
