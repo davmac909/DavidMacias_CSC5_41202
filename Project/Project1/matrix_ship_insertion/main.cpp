@@ -23,19 +23,19 @@ int main(int argc, char** argv) {
     srand(static_cast<int>(time(0)));
     
     //Declare and initialize variables
-    unsigned short rows;
-    unsigned short clmns;
-    unsigned short dispX;
-    unsigned short dispY;
-    unsigned short ship1X;
-    unsigned short ship1Y;
-    unsigned short ship1L = 4;
-    unsigned short ship2X;
-    unsigned short ship2Y;
-    unsigned short ship2L = 3;
-    unsigned short ship3X;
-    unsigned short ship3Y;
-    unsigned short ship3L = 2;
+    unsigned int rows;
+    unsigned int clmns;
+    unsigned int dispX;
+    unsigned int dispY;
+    unsigned int ship1X;
+    unsigned int ship1Y;
+    unsigned int ship1L = 4;
+    unsigned int ship2X;
+    unsigned int ship2Y;
+    unsigned int ship2L = 3;
+    unsigned int ship3X;
+    unsigned int ship3Y;
+    unsigned int ship3L = 2;
     
     
     cout <<"how many rows?" <<endl;
@@ -44,39 +44,31 @@ int main(int argc, char** argv) {
     cin >>clmns;
     
 
-    ship1X = rand()%clmns;
-    ship1Y = rand()%rows;
-    ship2X = rand()%clmns;
-    ship2Y = rand()%rows;
-    ship3X = rand()%clmns;
-    ship3Y = rand()%rows;
+    ship1X = 5;
+    ship1Y = 5;
+    ship2X = rand()%clmns+1;
+    ship2Y = rand()%rows+1;
+    ship3X = rand()%clmns+1;
+    ship3Y = rand()%rows+1;
     
     cout <<"1x = " <<ship1X <<" 1y = " <<ship1Y <<endl;
-    char matrix [rows][clmns];
+    cout <<"2x = " <<ship2X <<" 2y = " <<ship2Y <<endl;
+    cout <<"3x = " <<ship3X <<" 3y = " <<ship3Y <<endl;
     
-    for(int i = 1; i <= rows; i++) {
-        for(int j = 1; j <= clmns; j++) {
-            if(i == ship1Y && j == ship1X){
-                for(int g = 1; g <= ship1L; g++) {
+    char matrix [rows][clmns];
+//------------------------------------------------------------------------------    
+    for(int i = 1; i <= rows; i++){
+        for(int j = 1; j <= clmns; j++){
+            if((i == ship1Y) && (j == ship1X)){
+                for(int g = ship1X; g <= ship1X+ship1L; g++){
                     matrix[i][g] = 'O';
                 }
+            }else{
                 matrix[i][j] = 'X';
-            }else if(i == ship2Y && j == ship2X){
-                for(int g = 1; g <= ship1L; g++) {
-                    matrix[i][g] = 'O';
-                }
-                matrix[i][j] = 'X';
-            }else if(i == ship3Y && j == ship3X){
-                for(int g = 1; g <= ship1L; g++) {
-                    matrix[i][g] = 'O';
-                }
-                matrix[i][j] = 'X';
-            }else{matrix[i][j] = 'X';
             }
         }
     }
-    
-    
+//------------------------------------------------------------------------------
     for(int i = 1; i <= rows; i++) {
         for(int j = 1; j <= clmns; j++) {
             cout <<matrix[i][j];
@@ -84,12 +76,27 @@ int main(int argc, char** argv) {
         }
         cout <<endl;
     }
-    cout <<"Whats the x coordinate youd like to display?" <<endl;
-    cin >>dispX;
-    cout <<"Whats the y coordinate youd like to display?" <<endl;
-    cin >>dispY;
-    
-    cout <<matrix[dispY][dispX];
+//------------------------------------------------------------------------------
+    bool look = true;
+    do{
+        cout <<"Whats the x coordinate youd like to display?" <<endl;
+        cin >>dispX;
+        cout <<"Whats the y coordinate youd like to display?" <<endl;
+        cin >>dispY;
+        
+        if(dispX == 0){
+            look = false;
+        }
+        cout <<matrix[dispY][dispX] <<endl;
+        
+        for(int i = 1; i <= rows; i++) {
+            for(int j = 1; j <= clmns; j++) {
+                cout <<matrix[i][j];
+
+            }
+            cout <<endl;
+        }
+    }while(look);
 
     return 0;
 }
