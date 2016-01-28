@@ -26,21 +26,27 @@ int main(int argc, char** argv) {
     //Declare and initialize variables
     unsigned int rows = 15;
     unsigned int clmns = 15;
-    unsigned int shipX = 10;
-    unsigned int shipY = 10;
-    unsigned int shipL = 4;
+    unsigned int shipX;
+    unsigned int shipY;
+    short shipL = 4;
     unsigned int ortn;
     
-   
-
-
     char matrix [rows][clmns];
     ortn = rand()%2+1;
+    shipX = rand()%clmns+1;
+    shipY = rand()%rows+1;
+    
+    cout <<"X,Y = " <<shipX <<", " <<shipY <<endl;
+    cout <<"Orientation = ";
+    if(ortn == 1){
+        cout <<"Horizontal" <<endl;
+    }else{
+        cout <<"Vertical" <<endl;
+    }
     
     //Draw grid
     for(int i = 1; i <= rows; i++){
         for(int j = 1; j <= clmns; j++){
-            matrix[i][j] = '~';
             if(j == shipX && i == shipY){
                 if(ortn == 2){ 
                     while(i < shipX+shipL){
@@ -53,18 +59,14 @@ int main(int argc, char** argv) {
                         j++;
                     }
                 }
-                matrix[i][j] = '~';
-                }
             }
-            
         }
+    }
     
+    //Fill the rest of the grid
     for(int i = 1; i <= rows; i++){
         for(int j = 1; j <= clmns; j++){
-            
-            if(matrix[i][j] == 'O'){
-                
-            }else{
+            if(!(matrix[i][j] == 'O')){
                 matrix[i][j] = '~';
             }
         }
