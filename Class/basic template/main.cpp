@@ -14,8 +14,10 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void send(string, string);
-
+void fillAry(int[], int);
+void prntAry(int[], int, int);
+void 1stSml(int[], int, int);
+void
 //Execution Begins Here
 int main(int argc, char** argv) {
     string a;
