@@ -347,6 +347,7 @@ int main(int argc, char** argv) {
                 " (i.e. A1)." <<endl;
         cout <<"Or Enter two zeros to quit." <<endl;
         cin >>lttrIn >>rowIn;
+        lttrIn = toupper(lttrIn);
         if (static_cast<int>(lttrIn) == 48 && rowIn == 0){
             quit = true;
         }      
