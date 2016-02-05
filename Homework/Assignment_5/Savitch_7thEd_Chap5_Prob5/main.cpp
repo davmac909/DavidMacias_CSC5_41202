@@ -1,7 +1,7 @@
 /* 
  * Author: David Macias
- * Created on January 25, 2016, 8:36 AM
- * Purpose: Power Function Example
+ * Created on February 2, 2016, 8:36 AM
+ * Purpose: Change value to coins
  */
 
 //System Libraries
@@ -29,7 +29,6 @@ int main(int argc, char** argv) {
     
     //Generate the value of change to be processed [1-99]
     getChg(chgLeft);
-    
     
     //Process the amount of coins in value for quarters, dimes, pennies
     comCoin(QRTR, num, chgLeft);

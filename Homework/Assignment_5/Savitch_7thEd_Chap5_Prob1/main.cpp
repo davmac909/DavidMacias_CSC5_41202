@@ -1,7 +1,7 @@
 /* 
  * Author: David Macias
  * Created on January 25, 2016, 8:36 AM
- * Purpose: Power Function Example
+ * Purpose: 24 hour time to 12 hour 
  */
 
 //System Libraries
@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
 
 //Function Definition
 void getInpt(int &hr, int &min){
-	cout <<"Type the time in 24 Hour notation with the hours seperated by a space." <<endl;
+	cout <<"Type the time in 24 Hour notation (i.e 14:25)." <<endl;
 	cin >>hr;
         cin.ignore(2,':');
         cin >>min;

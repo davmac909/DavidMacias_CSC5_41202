@@ -1,7 +1,7 @@
 /* 
  * Author: David Macias
- * Created on January 25, 2016, 8:36 AM
- * Purpose: Power Function Example
+ * Created on February 2, 2016, 8:36 AM
+ * Purpose: Standard Length to Metric
  */
 
 //System Libraries
