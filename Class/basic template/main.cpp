@@ -14,26 +14,19 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void fillAry(int[], int);
-void prntAry(int[], int, int);
-void 1stSml(int[], int, int);
-void
+
 //Execution Begins Here
 int main(int argc, char** argv) {
-    string a;
-    string b;
+    int a = 34;
+    int *ptra;
     
+    ptra = &a;
     
-    cout <<"what is your name" <<endl;
-    cin >>b;
-    cout <<"and your last" <<endl;
-    cin >>a;
-    send(b,a);
+    cout <<&a <<endl;
+    cout <<*ptra <<endl;
+    cout <<ptra <<endl;
+    cout <<a <<endl;
     return 0;
 }
 
 //Function Definition
-void send(string h, string i){
-    cout <<"this is your name : " <<h <<endl;
-    cout <<"and your last name is : " <<i <<endl;
-}
