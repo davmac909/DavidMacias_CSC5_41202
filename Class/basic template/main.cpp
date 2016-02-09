@@ -6,6 +6,7 @@
 
 //System Libraries
 #include <iostream>
+#include <sstream>
 #include <string>
 using namespace std;
 
@@ -17,15 +18,20 @@ using namespace std;
 
 //Execution Begins Here
 int main(int argc, char** argv) {
-    int a = 34;
-    int *ptra;
-    
-    ptra = &a;
-    
-    cout <<&a <<endl;
-    cout <<*ptra <<endl;
-    cout <<ptra <<endl;
-    cout <<a <<endl;
+
+    string str = "hello";
+    istringstream ss(str);
+    char i[5];
+    ss >> i;
+    if (ss.fail())
+    {
+        // Error
+    }
+    else
+    {
+        std::cout << "The integer value is: " << i;
+    }
+
     return 0;
 }
 

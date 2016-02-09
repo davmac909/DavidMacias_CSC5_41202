@@ -20,12 +20,10 @@ using namespace std;
 //Function Prototypes
 void intlGme(unsigned short &, unsigned short &, unsigned short &);
 void shwRnks();
-void drwChar(char **, unsigned short, unsigned short);
+void drwChar(char[][10], unsigned short, unsigned short, unsigned short, unsigned short, unsigned short);
 
 //Execution Begins Here
 int main(int argc, char** argv) {
-    
-    
     //Declare and initialize variables
     unsigned short rows;            //Number of Rows in both Grids
     unsigned short clmns;           //Number of Columns in both Grids
@@ -54,10 +52,10 @@ int main(int argc, char** argv) {
     //Open the Scores file
     out.open("Battleship Scores.dat",ios::app);
     
-    //Start the Game!
+    //Start the Game
     intlGme(dfflty, rows, clmns);
     
-    //Set the index sizes of the arrays
+    //Set the sizes for both arrays
     char shpGrid [rows][clmns] = {};     //Size of the 2 dimensional ship array
     char usrGrid [rows][clmns] = {};     //Size of the 2 dimensional User array
     
@@ -294,7 +292,7 @@ void shwRnks(){
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
-void drwChar(char** grid, unsigned short shpX, unsigned short shpY, unsigned short shpL, unsigned short row, unsigned short clmn){
+void drwChar(char grid[][10], unsigned short shpX, unsigned short shpY, unsigned short shpL, unsigned short row, unsigned short clmn){
     //Set the random time seed
     srand(static_cast<int>(time(0)));
     

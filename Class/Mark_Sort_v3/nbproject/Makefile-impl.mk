@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Mark_Sort_v#3
+PROJECTNAME=Mark_Sort_v3
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Mark_Sort_Datatbase_V3
+PROJECTNAME=Mark_Sort_V4_Dynamic_Mem
 
 # Active Configuration
 DEFAULTCONF=Debug

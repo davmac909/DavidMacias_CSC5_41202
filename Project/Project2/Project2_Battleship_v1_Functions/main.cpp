@@ -19,8 +19,10 @@ using namespace std;
 
 //Function Prototypes
 void intlGme(unsigned short &, unsigned short &, unsigned short &);
+void chgSize(unsigned short &);
 void shwRnks();
-void drwChar(char **, unsigned short, unsigned short);
+//void drwChar(char a[][clmns], unsigned short r, unsigned short shpX, unsigned short shpY, unsigned short shpL);
+void rnd(unsigned short &, unsigned short &, unsigned short, unsigned short, unsigned short);
 
 //Execution Begins Here
 int main(int argc, char** argv) {
@@ -58,23 +60,27 @@ int main(int argc, char** argv) {
     //Start the Game!
     intlGme(dfflty, rows, clmns);
     
+    //Randomize location for ship 1
+    rnd(shipX1, shipY1, shipL1, rows, clmns);
+    
+    //Randomize location for ship 2
+    rnd(shipX2, shipY2, shipL2, rows, clmns);
+    
+    //Randomize location for ship 3
+    rnd(shipX3, shipY3, shipL3, rows, clmns);
+    
+    //Randomize location for ship 4
+    rnd(shipX4, shipY4, shipL4, rows, clmns);
+    
+    //Randomize location for ship 5
+    rnd(shipX5, shipY5, shipL5, rows, clmns);
+    
     //Set the index sizes of the arrays
     char shpGrid [rows][clmns] = {};     //Size of the 2 dimensional ship array
     char usrGrid [rows][clmns] = {};     //Size of the 2 dimensional User array
-    
-    //Randomize ship locations
-    shipX1 = rand()%(clmns-shipL1+1)+1;
-    shipY1 = rand()%(rows-shipL1+1)+1;
-    shipX2 = rand()%(clmns-shipL2+1)+1;
-    shipY2 = rand()%(rows-shipL2+1)+1;
-    shipX3 = rand()%(clmns-shipL3+1)+1;
-    shipY3 = rand()%(rows-shipL3+1)+1;
-    shipX4 = rand()%(clmns-shipL4+1)+1;
-    shipY4 = rand()%(rows-shipL4+1)+1;
-    shipX5 = rand()%(clmns-shipL5+1)+1;
-    shipY5 = rand()%(rows-shipL5+1)+1;
-
+ 
     //Draw Ship 1 in Ship Grid
+    
     for(int i = 1; i <= rows; i++){
         for(int j = 1; j <= clmns; j++){
             if(j == shipX1 && i == shipY1){
@@ -375,10 +381,7 @@ void intlGme(unsigned short &size, unsigned short &row, unsigned short &clmn){
 
         //Change Difficulty
         if(menuNum == 1){
-            cout <<"Enter Difficulty: 1-Easy" <<endl;
-            cout <<"                  2-Medium" <<endl;
-            cout <<"                  3-Hard" <<endl;
-            cin >>size;
+            chgSize(size);
         }else if(menuNum == 3){
             shwRnks();
         }else{
@@ -407,6 +410,15 @@ void intlGme(unsigned short &size, unsigned short &row, unsigned short &clmn){
         }
     }
 }
+/******************************************************************************/
+/******************************************************************************/
+/******************************************************************************/
+void chgSize(unsigned short &n){
+    cout <<"Enter Difficulty: 1-Easy" <<endl;
+            cout <<"                  2-Medium" <<endl;
+            cout <<"                  3-Hard" <<endl;
+            cin >>n;
+}
 
 /******************************************************************************/
 /******************************************************************************/
@@ -424,6 +436,12 @@ void shwRnks(){
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
-void drwChar(char **, unsigned short, unsigned short){
+/*void drwChar(char a[][clmns], unsigned short r, unsigned short shpX, unsigned short shpY, unsigned short shpL){
     
+}
+ */
+
+void rnd(unsigned short &shpX, unsigned short &shpY, unsigned short shpL, unsigned short row, unsigned short clmn){
+    shpX = rand()%(clmn-shpL+1)+1;
+    shpY = rand()%(row-shpL+1)+1;
 }
