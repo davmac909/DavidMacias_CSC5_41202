@@ -21,8 +21,9 @@ using namespace std;
 void intlGme(unsigned short &, unsigned short &, unsigned short &);
 void chgSize(unsigned short &);
 void shwRnks();
-//void drwChar(char a[][clmns], unsigned short r, unsigned short shpX, unsigned short shpY, unsigned short shpL);
+void drwChar(char [], unsigned short r, unsigned short c, unsigned short shpX, unsigned short shpY, unsigned short shpL);
 void rnd(unsigned short &, unsigned short &, unsigned short, unsigned short, unsigned short);
+short shp(char a[], unsigned short, unsigned short);
 
 //Execution Begins Here
 int main(int argc, char** argv) {
@@ -38,7 +39,7 @@ int main(int argc, char** argv) {
     unsigned short shipL3 = 4, shipL4 = 3;           //The length for ships 3 and 4
     unsigned short shipL5 = 2;           //The length for ship 5
     unsigned short shpCnt = 0;           //Ship counter
-    unsigned short ortn;                 //To determine orientation of ships in the ship grid
+    
     unsigned short strkCnt = 0;          //Strike Counter
     unsigned short hitCnt = 0;           //Hit Counter
     unsigned short rowIn;                //User input for the row
@@ -60,174 +61,27 @@ int main(int argc, char** argv) {
     //Start the Game!
     intlGme(dfflty, rows, clmns);
     
-    //Randomize location for ship 1
+    //Randomize locations for each ship
     rnd(shipX1, shipY1, shipL1, rows, clmns);
-    
-    //Randomize location for ship 2
     rnd(shipX2, shipY2, shipL2, rows, clmns);
-    
-    //Randomize location for ship 3
     rnd(shipX3, shipY3, shipL3, rows, clmns);
-    
-    //Randomize location for ship 4
     rnd(shipX4, shipY4, shipL4, rows, clmns);
-    
-    //Randomize location for ship 5
     rnd(shipX5, shipY5, shipL5, rows, clmns);
     
     //Set the index sizes of the arrays
     char shpGrid [rows][clmns] = {};     //Size of the 2 dimensional ship array
     char usrGrid [rows][clmns] = {};     //Size of the 2 dimensional User array
- 
-    //Draw Ship 1 in Ship Grid
-    
-    for(int i = 1; i <= rows; i++){
-        for(int j = 1; j <= clmns; j++){
-            if(j == shipX1 && i == shipY1){
-                ortn = rand()%2+1;
-                if(ortn == 2){ 
-                    while(i < shipY1+shipL1){
-                        shpGrid[i][j] = 'O';
-                        i++;
-                    }
-                }else{
-                    while(j < shipX1+shipL1){
-                        shpGrid[i][j] = 'O';
-                        j++;
-                    }
-                }
-            }
-        }
-    }
-    
-    //Draw Ship 2 Ship Grid
-    for(int i = 1; i <= rows; i++){
-        for(int j = 1; j <= clmns; j++){
-            if(j == shipX2 && i == shipY2){
-                ortn = rand()%2+1;
-                if(ortn == 2){ 
-                    if(shpGrid[i][j] == 'O'){
-                        do{
-                            j++;
-                        }while(shpGrid[i][j] == 'O');
-                    }
-                    while(i < shipY2+shipL2){
-                        shpGrid[i][j] = 'O';
-                        i++;
-                    }
-                }else{
-                    if(shpGrid[i][j] == 'O'){
-                        do{
-                            i++;
-                        }while(shpGrid[i][j] == 'O');
-                    }
-                    while(j < shipX2+shipL2){
-                        shpGrid[i][j] = 'O';
-                        j++;
-                    }
-                }
-            }
-        }
-    }
-    
-    //Draw Ship 3 Ship Grid
-    for(int i = 1; i <= rows; i++){
-        for(int j = 1; j <= clmns; j++){
-            if(j == shipX3 && i == shipY3){
-                ortn = rand()%2+1;
-                if(ortn == 2){ 
-                    if(shpGrid[i][j] == 'O'){
-                        do{
-                            j++;
-                        }while(shpGrid[i][j] == 'O');
-                    }
-                    while(i < shipY3+shipL3){
-                        shpGrid[i][j] = 'O';
-                        i++;
-                    }
-                }else{
-                    if(shpGrid[i][j] == 'O'){
-                        do{
-                            i++;
-                        }while(shpGrid[i][j] == 'O');
-                    }
-                    while(j < shipX3+shipL3){
-                        shpGrid[i][j] = 'O';
-                        j++;
-                    }
-                }
-            }
-        }
-    }
-    
-    //Draw Ship 4 Ship Grid
-    for(int i = 1; i <= rows; i++){
-        for(int j = 1; j <= clmns; j++){
-            if(j == shipX4 && i == shipY4){
-                ortn = rand()%2+1;
-                if(ortn == 2){ 
-                    if(shpGrid[i][j] == 'O'){
-                        do{
-                            j++;  
-                        }while(shpGrid[i][j] == 'O');
-                    }
-                    while(i < shipY4+shipL4){
-                        shpGrid[i][j] = 'O';
-                        i++;
-                    }
-                }else{
-                    if(shpGrid[i][j] == 'O'){
-                        do{
-                            i++;  
-                        }while(shpGrid[i][j] == 'O');
-                    }
-                    while(j < shipX4+shipL4){
-                        shpGrid[i][j] = 'O';
-                        j++; 
-                    }
-                }
-            }
-        }
-    }
-    
-    //Draw Ship 5 Ship Grid
-    for(int i = 1; i <= rows; i++){
-        for(int j = 1; j <= clmns; j++){
-            if(j == shipX5 && i == shipY5){
-                ortn = rand()%2+1;
-                if(ortn == 2){ 
-                    if(shpGrid[i][j] == 'O'){
-                        do{
-                            j++;   
-                        }while(shpGrid[i][j] == 'O');
-                    }
-                    while(i < shipY5+shipL5){
-                        shpGrid[i][j] = 'O';
-                        i++;
-                    }
-                }else{
-                    if(shpGrid[i][j] == 'O'){
-                        do{
-                            i++;   
-                        }while(shpGrid[i][j] == 'O');
-                    }
-                    while(j < shipX5+shipL5){
-                        shpGrid[i][j] = 'O';
-                        j++;
-                    }
-                }
-            }
-        }
-    }
+  
+    //Draw each ship with its length in the selected array size
+    drwChar(shpGrid[0], rows, clmns, shipX1, shipY1, shipL1);
+    drwChar(shpGrid[0], rows, clmns, shipX2, shipY2, shipL2);
+    drwChar(shpGrid[0], rows, clmns, shipX3, shipY3, shipL3);
+    drwChar(shpGrid[0], rows, clmns, shipX4, shipY4, shipL4);
+    drwChar(shpGrid[0], rows, clmns, shipX5, shipY5, shipL5);
     
     //Read how many O's there are to determine game end
-    for(int i = 1; i <= rows; i++){
-        for(int j = 1; j <= clmns; j++){
-            if(shpGrid[i][j] == 'O'){
-                shpCnt++;
-            }
-        }
-    }
+    shpCnt = shp(shpGrid[0], rows, clmns);
+    
 
     //Fill the rest of the Ship Grid
     for(int i = 1; i <= rows; i++){
@@ -364,8 +218,8 @@ int main(int argc, char** argv) {
 /******************************************************************************/
 /******************************************************************************/
 void intlGme(unsigned short &size, unsigned short &row, unsigned short &clmn){
-    unsigned short menuNum;              //Initial menu option input
-    bool modeSet = false;                //Boolean value becomes true after the initial menu
+    unsigned short menuNum;  //Initial menu option input
+    bool modeSet = false;    //Boolean value becomes true after the initial menu
     
     while(!modeSet){
         cout <<setw(30) <<"BATTLESHIP!" <<endl;
@@ -375,7 +229,7 @@ void intlGme(unsigned short &size, unsigned short &row, unsigned short &clmn){
                         size == 3?"Hard":"Difficulty not set");
         cout <<"  2.Start Game" 
                 "   3.Ranks" <<endl;
-        cout <<endl <<"Enter 1 to change Difficulty, 2 to start the Game" <<endl;
+        cout <<endl <<"Enter 1 to change Difficulty, 2 to start the Game"<<endl;
         cout <<"       Or 3 to see the Score Rankings." <<endl;
         cin >>menuNum;
 
@@ -436,12 +290,58 @@ void shwRnks(){
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
-/*void drwChar(char a[][clmns], unsigned short r, unsigned short shpX, unsigned short shpY, unsigned short shpL){
-    
+void drwChar(char a[], unsigned short r, unsigned short c, unsigned short shpX,
+        unsigned short shpY, unsigned short shpL){
+    unsigned short ortn;    //To determine orientation of ships in the ship grid
+    for(int i = 1; i <= r; i++){
+        for(int j = 1; j <= c; j++){
+            if(j == shpX && i == shpY){
+                ortn = rand()%2+1;
+                if(ortn == 2){ 
+                    //No overlapping algorithm
+                    if(a[i*r+j] == 'O'){
+                        do{
+                            j++;
+                        }while(a[i*r+j] == 'O');
+                    }
+                    //Drawing ship + length of characters to array
+                    while(i < shpY+shpL){
+                        a[i*r+j] = 'O';
+                        i++;
+                    }
+                }else{
+                    //No overlapping algorithm
+                    if(a[i*r+j] == 'O'){
+                        do{
+                            i++;
+                        }while(a[i*r+j] == 'O');
+                    }
+                    //Drawing ship + length of characters to array
+                    while(j < shpX+shpL){
+                        a[i*r+j] = 'O';
+                        j++;
+                    }
+                }
+            }
+        }
+    }
 }
- */
+ 
 
-void rnd(unsigned short &shpX, unsigned short &shpY, unsigned short shpL, unsigned short row, unsigned short clmn){
+void rnd(unsigned short &shpX, unsigned short &shpY, unsigned short shpL, 
+        unsigned short row, unsigned short clmn){
     shpX = rand()%(clmn-shpL+1)+1;
     shpY = rand()%(row-shpL+1)+1;
+}
+
+short shp(char a[], unsigned short r, unsigned short c){
+    short cnt = 0;
+    for(int i = 1; i <= r; i++){
+        for(int j = 1; j <= c; j++){
+            if(a[i*j] == 'O'){
+                cnt++;
+            }
+        }
+    }
+    return cnt;
 }
